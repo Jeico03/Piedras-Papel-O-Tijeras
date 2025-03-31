@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="light"] {
+  --bg-color: #f0f0f0;
+  --text-color: #333;
+  --card-bg: #fff;
+  --border-color: #ccc;
+  --button-bg: #007bff;
+  --button-hover: #0056b3;
+  --modal-bg: rgba(0, 0, 0, 0.6);
+  --modal-content-bg: #fff;
+  --modal-text-color: #333;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --card-bg: #333;
+  --border-color: #555;
+  --button-bg: #00aaff;
+  --button-hover: #0088cc;
+  --modal-bg: rgba(0, 0, 0, 0.8);
+  --modal-content-bg: #444;
+  --modal-text-color: #f0f0f0;
+}
+
+body[data-theme="light"] {
+  background-color: var(--bg-color);
+}
+
+body[data-theme="dark"] {
+  background-color: var(--bg-color);
+}
+
+.game-container {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 950px;
+  border: 2px solid var(--border-color);
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.game-options {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.game-option {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: var(--text-color);
+}
+
+.game-option:hover {
+  background-color: var(--border-color);
+  transform: scale(1.1);
+}
+
+.game-option img {
+  width: 80px;
+  height: 80px;
+}
+
+.game-result {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.game-score {
+  background-color: var(--border-color);
+  padding: 10px;
+  border-radius: 8px;
+  width: 80%;
+  margin: auto;
+}
+
+.game-score p {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.game-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.game-button {
+  background-color: var(--button-bg);
+  color: white;
+  border: 2px solid var(--button-hover);
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.game-button:hover {
+  background-color: var(--button-hover);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: var(--modal-content-bg);
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  color: var(--modal-text-color);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--modal-text-color);
+}
